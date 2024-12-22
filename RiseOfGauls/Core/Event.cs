@@ -20,12 +20,9 @@ public class Event
 
     public Event(string message, (ENUM_EVENT, int)[] array)
     {
+        
         Message = message;
-        Events = new Queue<(ENUM_EVENT, int)>();
-        foreach (var (eventType, value) in array)
-        {
-            Events.Enqueue((eventType, value));
-        }
+        Events = new Queue<(ENUM_EVENT, int)>(array);
     }
 
 
