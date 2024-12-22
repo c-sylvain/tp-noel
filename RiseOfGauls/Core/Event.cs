@@ -12,7 +12,7 @@ public class Event
     */
     
     public string Message { get; set; }
-    public Queue<(ENUM_EVENT, int)> Events {get; set;} = new Queue<(ENUM_EVENT, int)>();
+    public Queue<(ENUM_EVENT, int)> Events {get; set;} 
     
 
 
@@ -21,9 +21,10 @@ public class Event
     public Event(string message, (ENUM_EVENT, int)[] array)
     {
         Message = message;
-        foreach ((ENUM_EVENT, int) element in array)
+        Events = new Queue<(ENUM_EVENT, int)>();
+        foreach (var (eventType, value) in array)
         {
-            Events.Enqueue(element);
+            Events.Enqueue((eventType, value));
         }
     }
 

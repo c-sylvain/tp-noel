@@ -6,6 +6,23 @@ public class Village
     public List<Batimentix> Batimentix { get; set; }
     public Queue<(ENUM_EVENT, int)> Events {get; set;}
     
+    public Village(Random random)
+    {
+        Events = new Queue<(ENUM_EVENT, int)>();
+        
+        Batimentix = new List<Batimentix>
+        {
+            new Bankix(random),
+            new ChiefHut()
+            
+        };
+        
+        
+    } // TODO
+    
+    
+    
+    
     public ChiefHut ChiefHut
     {
         get
@@ -55,5 +72,39 @@ public class Village
         {
             ChiefHut.SetLevel(value);
         } 
+    }
+    
+    public Bankix Bankix
+    {
+        get
+        {
+            int nbbank = 0;
+            for (int i = 0; i < Batimentix.Count; i++)
+            {
+                if (Batimentix[i] is Bankix bank)
+                {
+                    nbbank++;
+                    return bank;
+                }
+                
+            }
+
+            throw new GaulsException("If there is no bank");
+        }
+        
+       
+    }
+
+    public int Money
+    {
+        get
+        {
+            return Bankix.GetVillageMoney();
+        }
+        set
+        {
+            Bankix.SetVillageMoney(value);
+
+        }
     }
 }
