@@ -24,13 +24,13 @@ public class Village
 
     }
 
-    public int Population
+    private int Population
     {
         get
         {
             return ChiefHut.GetPopulation();
         }
-        private set
+        set
         {
             ChiefHut.SetPopulation(value);
         }
