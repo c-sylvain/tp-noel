@@ -49,7 +49,11 @@ public class Batimentix
     
     public void SetCost(long baseCost)
     {
-        if (Cost < 0)
+        if (Cost < 0 )
+        {
+            throw new GaulsException();
+        }
+        if (Cost > 10)
         {
             throw new GaulsException();
         }
@@ -67,7 +71,7 @@ public class Batimentix
 
     public void SetDurability(int durability)
     {
-        if (Durability < 0)
+        if (durability < 0)
         {
             throw new GaulsException();
         }

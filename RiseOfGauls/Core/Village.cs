@@ -5,18 +5,6 @@ public class Village
 
     public List<Batimentix> Batimentix { get; set; }
     public Queue<(ENUM_EVENT, int)> Events {get; set;}
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     public ChiefHut ChiefHut
     {
@@ -33,11 +21,9 @@ public class Village
 
             throw new GaulsException();
         }
-
-
     }
 
-    private int Population
+    public int Population
     {
         get
         {
@@ -70,18 +56,4 @@ public class Village
             ChiefHut.SetLevel(value);
         } 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
 }

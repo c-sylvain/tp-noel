@@ -2,17 +2,29 @@
 
 public class Event
 {
+  /*  
+    public enum ENUM_EVENT
+    {
+        MONEY,
+        POPULATION,
+        DURABILITY
+    }
+    */
+    
     public string Message { get; set; }
-    public Queue<(ENUM_EVENT, int)> Events {get; set;}
+    public Queue<(ENUM_EVENT, int)> Events {get; set;} = new Queue<(ENUM_EVENT, int)>();
+    
 
 
 
 
     public Event(string message, (ENUM_EVENT, int)[] array)
     {
-        
         Message = message;
-        Events = new Queue<(ENUM_EVENT, int)>(array);
+        foreach ((ENUM_EVENT, int) element in array)
+        {
+            Events.Enqueue(element);
+        }
     }
 
 
@@ -32,12 +44,10 @@ public class Event
             }
 
         }
-
         if (nombrebank == 0)
         {
             throw new GaulsException();
         }
-        
     }
 
 

@@ -48,8 +48,8 @@ public class Bankix : Batimentix
             throw new GaulsException("Risk must be less than 100");
         }
         
-        int aleatoire = _random.Next(1, 100);
-        int result = amount * _random.Next(1, risk);
+        int aleatoire = _random.Next(1, 101);
+        int result = amount * _random.Next(1, risk+1);
         
 
         if (aleatoire > risk)
@@ -57,17 +57,12 @@ public class Bankix : Batimentix
             _tradeHistory.Push(result);
             return result;
         }
-        
-        if (aleatoire < risk && result > 0)
+        else
         {
             _tradeHistory.Push(-result);
             return -result;
         }
-        else
-        {
-            _tradeHistory.Push(result);
-            return result;
-        }
+        
         
         
     }
