@@ -4,7 +4,20 @@ public class Village
 {
 
     public List<Batimentix> Batimentix { get; set; }
+    public Queue<(ENUM_EVENT, int)> Events {get; set;}
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public ChiefHut ChiefHut
     {
         get
@@ -57,6 +70,10 @@ public class Village
             ChiefHut.SetLevel(value);
         } 
     }
+    
+    
+    
+    
     
     
     

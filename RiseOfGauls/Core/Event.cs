@@ -113,15 +113,7 @@ public class Event
     }
 
 
-    public string Display(List<Batimentix> batiments)
-    {
-        
-        
-        
-        
-        
-        
-    }
+    
     
     
     
