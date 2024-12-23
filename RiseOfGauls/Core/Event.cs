@@ -2,30 +2,21 @@
 
 public class Event
 {
-  /*  
-    public enum ENUM_EVENT
-    {
-        MONEY,
-        POPULATION,
-        DURABILITY
-    }
-    */
     
     public string Message { get; set; }
     public Queue<(ENUM_EVENT, int)> Events {get; set;} 
-    
-
-
-
-
+  
     public Event(string message, (ENUM_EVENT, int)[] array)
     {
         
         Message = message;
-        Events = new Queue<(ENUM_EVENT, int)>(array);
+        //Events = new Queue<(ENUM_EVENT, int)>(array);
+        Events = new Queue<(ENUM_EVENT, int)>(); // instantiation d'une queue vide de tuple de type ENUM_EVENT, int
+        for (var i = 0; i < array.Length; i++)
+        {
+            Events.Enqueue(array[i]);
+        }
     }
-
-
 
     public void MoneyEvent(List<Batimentix> batiments, int value)
     {
