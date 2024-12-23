@@ -55,6 +55,11 @@ Console.WriteLine(library.GetPopulation()); // 20
 
 */
 
+Village village = new Village(new Random(3));
+Bankix bank = village.Bankix; // Bankix
+Console.WriteLine(bank);
+int money = village.Money; // 25
+Console.WriteLine(money);
 
 
 

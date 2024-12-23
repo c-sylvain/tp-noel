@@ -8,7 +8,7 @@ public class Village
     
     public Village(Random random)
     {
-        Events = new Queue<(ENUM_EVENT, int)>();
+        //Events = new Queue<(ENUM_EVENT, int)>();
         
         Batimentix = new List<Batimentix>
         {

@@ -2,7 +2,6 @@
 
 public class Event
 {
-    
     public string Message { get; set; }
     public Queue<(ENUM_EVENT, int)> Events {get; set;} 
   
@@ -12,7 +11,7 @@ public class Event
         Message = message;
         //Events = new Queue<(ENUM_EVENT, int)>(array);
         Events = new Queue<(ENUM_EVENT, int)>(); // instantiation d'une queue vide de tuple de type ENUM_EVENT, int
-        for (var i = 0; i < array.Length; i++)
+        for (int i = 0; i < array.Length; i++)
         {
             Events.Enqueue(array[i]);
         }
